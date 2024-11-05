@@ -40,12 +40,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef RGBLIGHT_EFFECT_RAINBOW_SWIRL
 
 #define RGBLIGHT_LED_COUNT 10
-//#define RGBLED_SPLIT
 #define RBGLIGHT_HUE_STEP 21
 #define RBGLIGHT_SAT_STEP 20
 #define RBGLIGHT_VAL_STEP 20
 
 #define RGBLIGHT_DEFAULT_ON true
 #define RGBLIGHT_DEFAULT_HUE 85
+
+#define RGBLIGHT_LAYERS
+#define SPLIT_LAYER_STATE_ENABLE
 
 #define USE_SERIAL
