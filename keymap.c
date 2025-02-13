@@ -18,7 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 enum layers {
-   _COLEMAK,
+   _COLEMAK_Mac,
+   _COLEMAK_Win,
    _QWERTY,
    _SYMB,
    _NAV,
@@ -27,7 +28,10 @@ enum layers {
 
 layer_state_t layer_state_set_user(layer_state_t state){
    switch (get_highest_layer(state)) {
-   case _COLEMAK:
+   case _COLEMAK_Mac:
+      rgblight_sethsv (HSV_GREEN);
+      break;
+   case _COLEMAK_Win:
       rgblight_sethsv (HSV_GREEN);
       break;
    case _QWERTY:
@@ -64,6 +68,7 @@ enum{
 
 // Shortcut to make keymap more readable
 #define SYM_L   MO(_SYMB)
+#define CMW_L	TG(_COLEMAK_Win)
 #define QWE_L	TG(_QWERTY)
 
 #define KC_NAGR LT(_NAV, KC_GRV)   
@@ -87,9 +92,19 @@ tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_COLEMAK] = LAYOUT(
+  [_COLEMAK_Mac] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_NAGR ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                            KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,TD(TD_Min_UNDS) ,
+     KC_NABKT ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                            KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,TD(TD_Min_UNDS) ,
+  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+     KC_TAB  ,KC_Q    ,KC_W    ,KC_F    ,KC_P    ,KC_B    ,KC_ESC  ,                          SYM_L   ,KC_J    ,KC_L    ,KC_U    ,KC_Y    ,TD(TD_SCLN_CLN) ,TD(TD_Eql_PLUS)  ,
+  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+     SYM_L   ,KC_A    ,KC_R    ,KC_S    ,KC_T    ,KC_G    ,TD(TD_LSBR_LCBR) ,               TD(TD_RSBR_RCBR) ,KC_M  ,KC_N   ,KC_E    ,KC_I    ,KC_O    ,TD(TD_SQUO_DQUO) ,
+  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,KC_ADPSC,CMW_L   ,        KC_HOME ,KC_ADEN ,KC_K    ,KC_H    ,TD(TD_Com_LABK) ,TD(TD_Dot_RABK),TD(TD_FSL_QUES) ,TD(TD_BSL_PIPE) ,
+  //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
+     KC_PPLS ,KC_MINS ,KC_LCTL ,KC_LOPT ,     KC_LCMD ,    KC_SPC  ,KC_ENT  ,        KC_DEL  ,KC_BSPC ,    KC_RSFT ,     KC_LEFT ,KC_UP   ,KC_DOWN ,KC_RGHT 
+  //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
+  ),
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB  ,KC_Q    ,KC_W    ,KC_F    ,KC_P    ,KC_B    ,KC_ESC  ,                          SYM_L   ,KC_J    ,KC_L    ,KC_U    ,KC_Y    ,TD(TD_SCLN_CLN) ,TD(TD_Eql_PLUS)  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
