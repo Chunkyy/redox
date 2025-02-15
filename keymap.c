@@ -19,7 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 enum layers {
    _COLEMAK,
-   _QWERTY,
    _SYMB,
    _NAV,
    _ADJUST
@@ -29,9 +28,6 @@ layer_state_t layer_state_set_user(layer_state_t state){
    switch (get_highest_layer(state)) {
    case _COLEMAK:
       rgblight_sethsv (HSV_GREEN);
-      break;
-   case _QWERTY:
-      rgblight_sethsv (HSV_RED);
       break;
    case _SYMB:
       rgblight_sethsv (HSV_PURPLE);
@@ -64,7 +60,6 @@ enum{
 
 // Shortcut to make keymap more readable
 #define SYM_L   MO(_SYMB)
-#define QWE_L	TG(_QWERTY)
 
 #define KC_NAGR LT(_NAV, KC_GRV)   
 #define KC_NAMI LT(_NAV, KC_MINS)
@@ -95,23 +90,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      SYM_L   ,KC_A    ,KC_R    ,KC_S    ,KC_T    ,KC_G    ,TD(TD_LSBR_LCBR) ,               TD(TD_RSBR_RCBR) ,KC_M  ,KC_N   ,KC_E    ,KC_I    ,KC_O    ,TD(TD_SQUO_DQUO) ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,KC_ADPSC,QWE_L   ,        KC_HOME ,KC_ADEN ,KC_K    ,KC_H    ,TD(TD_Com_LABK) ,TD(TD_Dot_RABK),TD(TD_FSL_QUES) ,TD(TD_BSL_PIPE) ,
+     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,KC_ADPSC,XXXXXXX ,        KC_HOME ,KC_ADEN ,KC_K    ,KC_H    ,TD(TD_Com_LABK) ,TD(TD_Dot_RABK),TD(TD_FSL_QUES) ,TD(TD_BSL_PIPE) ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
      KC_LGUI ,KC_PPLS ,KC_MINS ,KC_LALT ,     KC_LCTL ,    KC_SPC  ,KC_ENT  ,        KC_DEL  ,KC_BSPC ,    KC_RSFT ,     KC_LEFT ,KC_UP   ,KC_DOWN ,KC_RGHT 
-  //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
-  ),
-
-  [_QWERTY] = LAYOUT(
-  //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_NAGR ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                            KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,_______ ,
-  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB  ,KC_Q    ,KC_W    ,KC_E    ,KC_R    ,KC_T    ,KC_ESC  ,                          SYM_L   ,KC_Y    ,KC_U    ,KC_I    ,KC_O    ,KC_P    ,_______  ,
-  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     SYM_L   ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,_______ ,                          _______ ,KC_H    ,KC_J    ,KC_K    ,KC_L    ,TD(TD_SCLN_CLN) ,_______ ,
-  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,KC_ADPSC,_______ ,        KC_HOME ,KC_ADEN ,KC_N    ,KC_M    ,_______ ,_______  ,_______ ,_______ ,
-  //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     KC_LALT ,KC_PPLS ,KC_MINS ,KC_LGUI ,     KC_LCTL ,    KC_SPC  ,KC_ENT  ,        KC_DEL  ,KC_BSPC ,    KC_RSFT ,     KC_LEFT ,KC_UP ,KC_DOWN   ,KC_RGHT 
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
 
