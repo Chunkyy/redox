@@ -55,7 +55,7 @@ void keyboard_post_init_user(void) {
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
-   rgblight_set_layer_state(0, layer_state_cmp(state, _DVORAK));
+   rgblight_set_layer_state(0, layer_state_cmp(state, _COLEMAK));
    return state;
 }
 
