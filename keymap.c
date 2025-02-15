@@ -65,32 +65,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
    rgblight_set_layer_state(3, layer_state_cmp(state, _NAV));
    rgblight_set_layer_state(4, layer_state_cmp(state, _ADJUST));
    return state;
-}
-
-//
-//layer_state_t layer_state_set_user(layer_state_t state){
-//   switch (get_highest_layer(state)) {
-//   case _COLEMAK:
-//      rgblight_sethsv (HSV_GREEN);
-//      break;
-//   case _QWERTY:
-//      rgblight_sethsv (HSV_RED);
-//      break;                                 
-//   case _SYMB:
-//      rgblight_sethsv (HSV_PURPLE);
-//      break;
-//   case _NAV:
-//      rgblight_sethsv (HSV_YELLOW);
-//      break;
-//   case _ADJUST:
-//      rgblight_sethsv (HSV_BLUE);
-//      break;
-//   default:
-//      rgblight_sethsv (HSV_GREEN);
-//      break;
-//   }
-//   return state;
-//}         
+}      
 
 enum{
    TD_SQUO_DQUO,
