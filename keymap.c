@@ -25,33 +25,47 @@ enum layers {
    _NAV,
    _ADJUST
 };
+const rgblight_segment_t PROGMEM colemakColour[] = RGBLIGHT_LAYER_SEGMENTS(
+      {0, 5, HSV_GREEN}
+);
+const rgblight_segment_t PROGMEM qwertyColour[] = RGBLIGHT_LAYER_SEGMENTS(
+      {0, 5, HSV_RED}
+);
+const rgblight_segment_t PROGMEM symbolColour[] = RGBLIGHT_LAYER_SEGMENTS(
+      {0, 5, HSV_PURPLE}
+);
+const rgblight_segment_t PROGMEM navigationColour[] = RGBLIGHT_LAYER_SEGMENTS(
+      {0, 5, HSV_MAGENTA}
+);
+const rgblight_segment_t PROGMEM adjustColour[] = RGBLIGHT_LAYER_SEGMENTS(
+      {0, 5, HSV_BLUE}
+);
 
-layer_state_t layer_state_set_user(layer_state_t state){
-   switch (get_highest_layer(state)) {
-   case _COLEMAK_Mac:
-      rgblight_sethsv (HSV_GREEN);
-      break;
-   case _COLEMAK_Win:
-      rgblight_sethsv (HSV_GREEN);
-      break;
-   case _QWERTY:
-      rgblight_sethsv (HSV_RED);
-      break;
-   case _SYMB:
-      rgblight_sethsv (HSV_PURPLE);
-      break;
-   case _NAV:
-      rgblight_sethsv (HSV_YELLOW);
-      break;
-   case _ADJUST:
-      rgblight_sethsv (HSV_BLUE);
-      break;
-   default:
-      rgblight_sethsv (HSV_GREEN);
-      break;
-   }
+const rgblight_segment_t* const PROGMEM layerColours[] = RGBLIGHT_LAYERS_LIST(
+   colemakColour,
+   qwertyColour,
+   symbolColour,
+   navigationColour,
+   adjustColour
+);
+
+void keyboard_post_init_user(void) {
+   // Enable the LED layers
+   rgblight_layers = layerColours;
+}
+
+layer_state_t default_layer_state_set_user(layer_state_t state) {
+   rgblight_set_layer_state(0, layer_state_cmp(state, _COLEMAK));
    return state;
 }
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+   rgblight_set_layer_state(1, layer_state_cmp(state, _QWERTY));
+   rgblight_set_layer_state(2, layer_state_cmp(state, _SYMB));
+   rgblight_set_layer_state(3, layer_state_cmp(state, _NAV));
+   rgblight_set_layer_state(4, layer_state_cmp(state, _ADJUST));
+   return state;
+}      
 
 enum{
    SQUO_DQUO,
