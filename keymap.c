@@ -54,16 +54,16 @@ layer_state_t layer_state_set_user(layer_state_t state){
 }
 
 enum{
-   TD_SQUO_DQUO,
-   TD_SCLN_CLN,
-   TD_LSBR_LCBR,
-   TD_RSBR_RCBR,
-   TD_Min_UNDS,
-   TD_Eql_PLUS,
-   TD_Dot_RABK,
-   TD_Com_LABK,
-   TD_FSL_QUES,
-   TD_BSL_PIPE
+   SQUO_DQUO,
+   SCLN_CLN,
+   LSBR_LCBR,
+   RSBR_RCBR,
+   Min_UNDS,
+   Eql_PLUS,
+   Dot_RABK,
+   Com_LABK,
+   FSL_QUES,
+   BSL_PIPE
 };
 
 // Shortcut to make keymap more readable
@@ -78,29 +78,29 @@ enum{
 #define KC_ADEN LT(_ADJUST, KC_END)
 
 tap_dance_action_t tap_dance_actions[] = {
-   [TD_SQUO_DQUO] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT,KC_DQUO),
-   [TD_SCLN_CLN] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN,KC_COLN),
-   [TD_LSBR_LCBR] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC,KC_LCBR),
-   [TD_RSBR_RCBR] = ACTION_TAP_DANCE_DOUBLE(KC_RBRC,KC_RCBR),
-   [TD_Min_UNDS] = ACTION_TAP_DANCE_DOUBLE(KC_NAMI,KC_UNDS),
-   [TD_Eql_PLUS] = ACTION_TAP_DANCE_DOUBLE(KC_EQL,KC_PLUS),
-   [TD_Dot_RABK] = ACTION_TAP_DANCE_DOUBLE(KC_DOT,KC_RABK),
-   [TD_Com_LABK] = ACTION_TAP_DANCE_DOUBLE(KC_COMM,KC_LABK),
-   [TD_FSL_QUES] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH,KC_QUES),
-   [TD_BSL_PIPE] = ACTION_TAP_DANCE_DOUBLE(KC_NUBS,KC_PIPE),
+   [SQUO_DQUO] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT,KC_DQUO),
+   [SCLN_CLN] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN,KC_COLN),
+   [LSBR_LCBR] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC,KC_LCBR),
+   [RSBR_RCBR] = ACTION_TAP_DANCE_DOUBLE(KC_RBRC,KC_RCBR),
+   [Min_UNDS] = ACTION_TAP_DANCE_DOUBLE(KC_NAMI,KC_UNDS),
+   [Eql_PLUS] = ACTION_TAP_DANCE_DOUBLE(KC_EQL,KC_PLUS),
+   [Dot_RABK] = ACTION_TAP_DANCE_DOUBLE(KC_DOT,KC_RABK),
+   [Com_LABK] = ACTION_TAP_DANCE_DOUBLE(KC_COMM,KC_LABK),
+   [FSL_QUES] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH,KC_QUES),
+   [BSL_PIPE] = ACTION_TAP_DANCE_DOUBLE(KC_NUBS,KC_PIPE),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_COLEMAK_Mac] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_NABKT ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                            KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,TD(TD_Min_UNDS) ,
+     KC_NABKT ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                            KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,TD(Min_UNDS) ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB  ,KC_Q    ,KC_W    ,KC_F    ,KC_P    ,KC_B    ,KC_ESC  ,                          SYM_L   ,KC_J    ,KC_L    ,KC_U    ,KC_Y    ,TD(TD_SCLN_CLN) ,TD(TD_Eql_PLUS)  ,
+     KC_TAB  ,KC_Q    ,KC_W    ,KC_F    ,KC_P    ,KC_B    ,KC_ESC  ,                          SYM_L   ,KC_J    ,KC_L    ,KC_U    ,KC_Y    ,TD(SCLN_CLN) ,TD(Eql_PLUS)  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     SYM_L   ,KC_A    ,KC_R    ,KC_S    ,KC_T    ,KC_G    ,TD(TD_LSBR_LCBR) ,               TD(TD_RSBR_RCBR) ,KC_M  ,KC_N   ,KC_E    ,KC_I    ,KC_O    ,TD(TD_SQUO_DQUO) ,
+     SYM_L   ,KC_A    ,KC_R    ,KC_S    ,KC_T    ,KC_G    ,TD(LSBR_LCBR) ,               TD(RSBR_RCBR) ,KC_M  ,KC_N   ,KC_E    ,KC_I    ,KC_O    ,TD(SQUO_DQUO) ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,KC_ADPSC,CMW_L   ,        KC_HOME ,KC_ADEN ,KC_K    ,KC_H    ,TD(TD_Com_LABK) ,TD(TD_Dot_RABK),TD(TD_FSL_QUES) ,TD(TD_BSL_PIPE) ,
+     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,KC_ADPSC,CMW_L   ,        KC_HOME ,KC_ADEN ,KC_K    ,KC_H    ,TD(Com_LABK) ,TD(Dot_RABK),TD(FSL_QUES) ,TD(BSL_PIPE) ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
      KC_PPLS ,KC_MINS ,KC_LCTL ,KC_LOPT ,     KC_LCMD ,    KC_SPC  ,KC_ENT  ,        KC_DEL  ,KC_BSPC ,    KC_RSFT ,     KC_LEFT ,KC_UP   ,KC_DOWN ,KC_RGHT 
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
@@ -108,13 +108,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_COLEMAK_Win] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_NABKT ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                            KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,TD(TD_Min_UNDS) ,
+     KC_NABKT ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                            KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,TD(Min_UNDS) ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB  ,KC_Q    ,KC_W    ,KC_F    ,KC_P    ,KC_B    ,KC_ESC  ,                          SYM_L   ,KC_J    ,KC_L    ,KC_U    ,KC_Y    ,TD(TD_SCLN_CLN) ,TD(TD_Eql_PLUS)  ,
+     KC_TAB  ,KC_Q    ,KC_W    ,KC_F    ,KC_P    ,KC_B    ,KC_ESC  ,                          SYM_L   ,KC_J    ,KC_L    ,KC_U    ,KC_Y    ,TD(SCLN_CLN) ,TD(Eql_PLUS)  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     SYM_L   ,KC_A    ,KC_R    ,KC_S    ,KC_T    ,KC_G    ,TD(TD_LSBR_LCBR) ,               TD(TD_RSBR_RCBR) ,KC_M  ,KC_N   ,KC_E    ,KC_I    ,KC_O    ,TD(TD_SQUO_DQUO) ,
+     SYM_L   ,KC_A    ,KC_R    ,KC_S    ,KC_T    ,KC_G    ,TD(LSBR_LCBR) ,               TD(RSBR_RCBR) ,KC_M  ,KC_N   ,KC_E    ,KC_I    ,KC_O    ,TD(SQUO_DQUO) ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,KC_ADPSC,QWE_L   ,        KC_HOME ,KC_ADEN ,KC_K    ,KC_H    ,TD(TD_Com_LABK) ,TD(TD_Dot_RABK),TD(TD_FSL_QUES) ,TD(TD_BSL_PIPE) ,
+     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,KC_ADPSC,QWE_L   ,        KC_HOME ,KC_ADEN ,KC_K    ,KC_H    ,TD(Com_LABK) ,TD(Dot_RABK),TD(FSL_QUES) ,TD(BSL_PIPE) ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
      KC_LGUI ,KC_PPLS ,KC_MINS ,KC_LALT ,     KC_LCTL ,    KC_SPC  ,KC_ENT  ,        KC_DEL  ,KC_BSPC ,    KC_RSFT ,     KC_LEFT ,KC_UP   ,KC_DOWN ,KC_RGHT 
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB  ,KC_Q    ,KC_W    ,KC_E    ,KC_R    ,KC_T    ,KC_ESC  ,                          SYM_L   ,KC_Y    ,KC_U    ,KC_I    ,KC_O    ,KC_P    ,_______  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     SYM_L   ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,_______ ,                          _______ ,KC_H    ,KC_J    ,KC_K    ,KC_L    ,TD(TD_SCLN_CLN) ,_______ ,
+     SYM_L   ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,_______ ,                          _______ ,KC_H    ,KC_J    ,KC_K    ,KC_L    ,TD(SCLN_CLN) ,_______ ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,KC_ADPSC,_______ ,        KC_HOME ,KC_ADEN ,KC_N    ,KC_M    ,_______ ,_______  ,_______ ,_______ ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
