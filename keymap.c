@@ -26,19 +26,19 @@ enum layers {
 };
 
 const rgblight_segment_t PROGMEM colemakColour[] = RGBLIGHT_LAYER_SEGMENTS(
-      {1, 10, HSV_GREEN}
+      {0, 5, HSV_GREEN}
 );
 const rgblight_segment_t PROGMEM qwertyColour[] = RGBLIGHT_LAYER_SEGMENTS(
-      {1, 10, HSV_RED}
+      {0, 5, HSV_RED}
 );
 const rgblight_segment_t PROGMEM symbolColour[] = RGBLIGHT_LAYER_SEGMENTS(
-      {1, 10, HSV_PURPLE}
+      {0, 5, HSV_PURPLE}
 );
 const rgblight_segment_t PROGMEM navigationColour[] = RGBLIGHT_LAYER_SEGMENTS(
-      {1, 10, HSV_MAGENTA}
+      {0, 5, HSV_MAGENTA}
 );
 const rgblight_segment_t PROGMEM adjustColour[] = RGBLIGHT_LAYER_SEGMENTS(
-      {1, 10, HSV_BLUE}
+      {0, 5, HSV_BLUE}
 );
 
 const rgblight_segment_t* const PROGMEM layerColours[] = RGBLIGHT_LAYERS_LIST(
