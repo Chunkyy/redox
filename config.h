@@ -50,4 +50,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_LAYERS
 #define SPLIT_LAYER_STATE_ENABLE
 
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+#define CAPS_WORD_INVERT_ON_SHIFT
+
 #define USE_SERIAL
