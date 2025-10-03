@@ -99,7 +99,6 @@ tap_dance_action_t tap_dance_actions[] = {
    [SCLN_CLN] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN,KC_COLN),
    [LSBR_LCBR] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC,KC_LCBR),
    [RSBR_RCBR] = ACTION_TAP_DANCE_DOUBLE(KC_RBRC,KC_RCBR),
-   [Min_UNDS] = ACTION_TAP_DANCE_DOUBLE(KC_MINS,KC_UNDS),
    [Eql_PLUS] = ACTION_TAP_DANCE_DOUBLE(KC_EQL,KC_PLUS),
    [Dot_RABK] = ACTION_TAP_DANCE_DOUBLE(KC_DOT,KC_RABK),
    [Com_LABK] = ACTION_TAP_DANCE_DOUBLE(KC_COMM,KC_LABK),
@@ -111,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_COLEMAK_Mac] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_NUBS  ,KC_1   ,KC_2    ,KC_3    ,KC_4    ,KC_5   ,                                            KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,TD(Min_UNDS) ,
+     KC_NUBS  ,KC_1   ,KC_2    ,KC_3    ,KC_4    , KC_5   ,                                            KC_6    , KC_7   ,KC_8    ,KC_9    ,KC_0    , KC_MINS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB  ,KC_Q    ,KC_W    ,KC_F    ,KC_P    ,KC_B    ,KC_ESC  ,                          SYM_L   ,KC_J    ,KC_L    ,KC_U    ,KC_Y    ,TD(SCLN_CLN) ,TD(Eql_PLUS)  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
