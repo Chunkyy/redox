@@ -156,9 +156,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      SYM_L   ,KC_A    ,KC_R    ,KC_S    ,KC_T    ,KC_G    ,TD(LSBR_LCBR) ,               TD(RSBR_RCBR),KC_M    ,KC_N    ,KC_E    ,KC_I    ,KC_O    ,TD(SQUO_DQUO) ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,KC_ADPSC,_______ ,       KC_HOME  ,KC_ADEN ,KC_K    ,KC_H    ,TD(Com_LABK) ,TD(Dot_RABK),TD(FSL_QUES) ,TD(BSL_PIPE) ,
+     _______ ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,_______ ,_______ ,       KC_HOME  ,KC_ADEN ,KC_K    ,KC_H    ,TD(Com_LABK) ,TD(Dot_RABK),TD(FSL_QUES) ,TD(BSL_PIPE) ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     KC_LGUI ,KC_NAPLS,KC_MINS ,KC_LALT ,     KC_LCTL ,    KC_SPC  ,KC_ENT  ,        KC_DEL  ,KC_BSPC ,    KC_RSFT ,     KC_LEFT ,KC_UP   ,KC_DOWN ,KC_NARI 
+     KC_LGUI ,KC_PPLS,KC_MINS ,KC_LALT ,     KC_LCTL ,    KC_SPC  ,KC_ENT  ,        KC_DEL  ,KC_BSPC ,    KC_RSFT ,     KC_LEFT ,KC_UP   ,KC_DOWN ,KC_RGHT 
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
 
