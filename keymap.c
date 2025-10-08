@@ -73,8 +73,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #define ENTNAV LT(_NAV, KC_ENT)
 #define DELNAV LT(_NAV, KC_DEL)
 
-#define TABLSFT MT(KC_LSFT, KC_TAB)
-#define TABRSFT MT(KC_RSFT, KC_TAB)
+#define TABLSFT LSFT_T(KC_TAB)
+#define TABRSFT RSFT_T(KC_TAB)
 
 #define VOLDADJ LT(_ADJUST, KC_VOLD)
 #define KC_ADEN LT(_ADJUST, KC_END)
