@@ -89,7 +89,7 @@ enum{
    Dot_RABK,
    Com_LABK,
    FSL_QUES,
-   BSL_PIPE
+   BSL_PIPE,
    PRV_NXT
 };
 
