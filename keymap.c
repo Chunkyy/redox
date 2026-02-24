@@ -114,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB  ,KC_Q    ,KC_W    ,KC_F    ,KC_P    ,KC_B    ,KC_ESC  ,                          KC_ESC  ,KC_J    ,KC_L    ,KC_U    ,KC_Y    ,TD(SCLN_CLN) ,TD(Eql_PLUS)  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     CW_TOGG ,KC_A ,LCTL_T(KC_R),LOPT_T(KC_S),LCMD_T(KC_T),KC_G,TD(LSBR_LCBR),    TD(RSBR_RCBR),KC_M ,RCMD_T(KC_N),ROPT_T(KC_E) ,RCTL_T(KC_I)    ,KC_O ,TD(SQUO_DQUO) ,
+     CW_TOGG ,KC_A ,LCTL_T(KC_R),LOPT_T(KC_S),LCMD_T(KC_T),KC_G,TD(LSBR_LCBR),       TD(RSBR_RCBR),KC_M ,RCMD_T(KC_N),ROPT_T(KC_E),RCTL_T(KC_I),KC_O,TD(SQUO_DQUO) ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      CMW_L   ,KC_Z    ,KC_X    ,KC_C    ,KC_D    ,KC_V    ,VOLDADJ,KC_VOLU  ,        KC_HOME ,KC_ADEN ,KC_K    ,KC_H  ,TD(Com_LABK) ,TD(Dot_RABK),TD(FSL_QUES) ,TD(BSL_PIPE) ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
@@ -146,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,KC_MPLY ,TD(PRV_NXT) ,    KC_MCTL ,KC_LPAD ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,     XXXXXXX ,    KC_BTN1 ,KC_BTN2 ,        _______ ,_______ ,    XXXXXXX ,     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX 
+     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,     _______ ,    KC_BTN1 ,KC_BTN2 ,        _______ ,_______ ,    _______ ,     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX 
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
 
